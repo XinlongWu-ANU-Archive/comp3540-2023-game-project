@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidbody2D;
     private float jumpForce = 5;
     private bool isJump = false;
+    private BoxCollider2D collider2D;
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+        collider2D = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -39,11 +41,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Terrain"))
         {
             Vector2 hitPoint = collision.collider.ClosestPoint(transform.position);
-            if (hitPoint.y < collision.transform.position.y)
+            float objBound = collider2D.size.x / 2;
+            if (hitPoint.y > collision.transform.position.y && (transform.position.x - hitPoint.x <= objBound && transform.position.x - hitPoint.x >= -objBound))
             {
-                return;
+                isJump = false;
             }
-            isJump = false;
         }
 
     }

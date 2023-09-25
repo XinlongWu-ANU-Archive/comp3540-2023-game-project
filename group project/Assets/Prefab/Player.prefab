@@ -324,7 +324,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &-3661922440243492226
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -391,7 +391,7 @@ Animation:
   m_GameObject: {fileID: 4230189338966141307}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 641d66c149651ea4f87e17e6d6b4ecdb, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 641d66c149651ea4f87e17e6d6b4ecdb, type: 2}
   m_WrapMode: 0
