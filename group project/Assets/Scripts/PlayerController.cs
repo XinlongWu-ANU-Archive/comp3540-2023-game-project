@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private float speed = 3;
     private Rigidbody2D rigidbody2D;
     private float jumpForce = 5;
+    private bool isJump = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +18,33 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
+        transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rigidbody2D.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+            jump();
         }
+    }
+
+    void jump()
+    {
+        if (!isJump)
+        {
+            rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            isJump = true;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Terrain"))
+        {
+            Vector2 hitPoint = collision.collider.ClosestPoint(transform.position);
+            if (hitPoint.y < collision.transform.position.y)
+            {
+                return;
+            }
+            isJump = false;
+        }
+
     }
 }
