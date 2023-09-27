@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
                 isFall = false;
             }
         }
-        else if (collision.gameObject.CompareTag("Monster"))
+        else if (collision.gameObject.CompareTag("Monster") || collision.gameObject.CompareTag("Trap"))
         {
             hited();
         }
