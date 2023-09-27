@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Terrain
+  - Trap
+  - Fruit
+  - Monster
   layers:
   - Default
   - TransparentFX
