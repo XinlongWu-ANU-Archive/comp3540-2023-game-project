@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9051200291373641772}
   - component: {fileID: 750944333701107367}
+  - component: {fileID: 3424596568768735519}
   m_Layer: 0
   m_Name: AngryPig
   m_TagString: Untagged
@@ -78,6 +79,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33211327, y: 0.27004492}
   m_EdgeRadius: 0
+--- !u!50 &3424596568768735519
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4418710131376669445}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 60
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &6431722283907975445
 GameObject:
   m_ObjectHideFlags: 0
