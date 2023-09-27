@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private GameManager gameManager;
-    private int scoreToAdd = 5;
-
     private bool _faceToRight;
     private float speed = 3;
     private Rigidbody2D rigidbody2D;
@@ -25,8 +22,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-
         rigidbody2D = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<BoxCollider2D>();
         playerRb2D = GetComponent<Rigidbody2D>();
@@ -40,7 +35,7 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        if  (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             jump();
 
         if (isJump && playerRb2D.velocity.y < -0.5f)
@@ -127,16 +122,6 @@ public class PlayerController : MonoBehaviour
         {
             _faceToRight = value;
             spriteRenderer.flipX = !value;
-        }
-    }
-
-    // Collect fruit and add score when the player touch the fruit
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Fruit"))
-        {
-            Destroy(other.gameObject);
-            gameManager.UpdateScore(scoreToAdd);
         }
     }
 }
