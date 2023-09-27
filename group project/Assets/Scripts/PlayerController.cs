@@ -7,13 +7,15 @@ public class PlayerController : MonoBehaviour
     private float speed = 3;
     private Rigidbody2D rigidbody2D;
     private float jumpForce = 5;
+    private float hitForce = 2;
     private BoxCollider2D collider2D;
     private Rigidbody2D playerRb2D;
+    private SpriteRenderer spriteRenderer;
     private Animator animator;
 
     // dont use following parameters directly, use getter and setter.
     private bool _isJump = false;
-    private bool _isRun = false;
+    private float _horizontalInput = 0f;
     private bool _isFall = false;
 
     // Start is called before the first frame update
@@ -23,17 +25,14 @@ public class PlayerController : MonoBehaviour
         collider2D = GetComponent<BoxCollider2D>();
         playerRb2D = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
-        if (horizontalInput == 0)
-            isRun = false;
-        else
-            isRun = true;
 
         if  (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             jump();
@@ -86,15 +85,19 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isJump", value);
         }
     }
-    private bool isRun
+    private float horizontalInput
     {
-        get { return _isRun; }
+        get { return _horizontalInput; }
         set
         {
-            animator.SetBool("isRun", value);
-            if (_isRun == false && value == true)
+            animator.SetBool("isRun", value != 0);
+            if (_horizontalInput == 0 && value != 0)
                 animator.Play("Run");
-            _isRun = value;
+            if (value < 0)
+                spriteRenderer.flipX = true;
+            else if (value > 0)
+                spriteRenderer.flipX = false;
+            _horizontalInput = value;
         }
     }
 
@@ -104,7 +107,7 @@ public class PlayerController : MonoBehaviour
         set
         {
             animator.SetBool("isFall", value);
-            _isRun = value;
+            _isFall = value;
         }
     }
 }
