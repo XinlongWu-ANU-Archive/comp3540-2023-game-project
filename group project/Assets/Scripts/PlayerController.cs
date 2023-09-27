@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private bool _faceToRight;
     private float speed = 3;
     private Rigidbody2D rigidbody2D;
     private float jumpForce = 5;
@@ -94,9 +95,9 @@ public class PlayerController : MonoBehaviour
             if (_horizontalInput == 0 && value != 0)
                 animator.Play("Run");
             if (value < 0)
-                spriteRenderer.flipX = true;
+                faceToRight = false;
             else if (value > 0)
-                spriteRenderer.flipX = false;
+                faceToRight = true;
             _horizontalInput = value;
         }
     }
@@ -108,6 +109,19 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("isFall", value);
             _isFall = value;
+        }
+    }
+
+    public bool faceToRight
+    {
+        get
+        {
+            return _faceToRight;
+        }
+        set
+        {
+            _faceToRight = value;
+            spriteRenderer.flipX = !value;
         }
     }
 }
