@@ -60,14 +60,26 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Terrain"))
+        if (collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("Platform"))
         {
+            //Debug.Log("objecttag:"+collision.gameObject.tag);
             Vector2 hitPoint = collision.collider.ClosestPoint(transform.position);
             float objBound = collider2D.size.x / 2;
+
+            //Debug.Log("hitPoint: " + hitPoint);
+            //Debug.Log("collision.transform.position.y: " + collision.transform.position.y);
+            //Debug.Log("collision.transform.GetComponent<BoxCollider2D>().offset.x: " + collision.transform.GetComponent<BoxCollider2D>().offset.x);
+            //Debug.Log("collision.transform.GetComponent<BoxCollider2D>().size.x/2: " + collision.transform.GetComponent<BoxCollider2D>().size.x / 2);
+            //Debug.Log("transform.position.x: " + transform.position.x);
+            //Debug.Log("hitPoint.x: " + hitPoint.x);
+            //Debug.Log("objBound: " + objBound);
+
+            isJump = false;
+            isFall = false;
             if (hitPoint.y > collision.transform.position.y && (transform.position.x - hitPoint.x <= objBound && transform.position.x - hitPoint.x >= -objBound))
             {
-                isJump = false;
-                isFall = false;
+                //isJump = false;
+                //isFall = false;
             }
         }
         else if (collision.gameObject.CompareTag("Monster") || collision.gameObject.CompareTag("Trap"))

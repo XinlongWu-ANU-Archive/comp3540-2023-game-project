@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 5096345289937495123}
   m_Layer: 0
   m_Name: Left-RightPlats
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,7 +234,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -6.3153515, y: -0.30098194}
+  m_Offset: {x: -6.3252883, y: -0.29501992}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -245,5 +245,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2884884, y: 0.21562278}
+  m_Size: {x: 1.3322096, y: 0.2513948}
   m_EdgeRadius: 0
