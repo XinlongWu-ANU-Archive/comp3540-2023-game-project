@@ -21,7 +21,8 @@ public class BulletManager : MonoBehaviour
 
     void shoot()
     {
-        Bullet bullet = Instantiate(bulletType, player.transform.position, new Quaternion()).GetComponent<Bullet>();
+        Bullet bullet = Instantiate(bulletType, player.transform.position, Quaternion.identity).GetComponent<Bullet>();
+
         bullet.Direction = player.faceToRight ? 1f : -1f;
     }
 }
