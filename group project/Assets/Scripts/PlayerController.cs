@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    private bool gateEntered = false;
+
     private bool _faceToRight;
     private float speed = 3;
     private Rigidbody2D rigidbody2D;
@@ -136,4 +139,35 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = !value;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // If the player trigger the EnterGate, player has passed current level and will enter next level
+        if (collision.CompareTag("EnterGate"))
+        {
+            gateEntered = true;
+            Debug.Log("Add Transition Scene");
+            LoadScene();
+        }
+    }
+
+    // Load to the scene of next level
+    public void LoadScene()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        if (currentSceneName == "Leve0")
+        {
+            SceneManager.LoadScene("Level1");
+        }
+        else if (currentSceneName == "Level1")
+        {
+            SceneManager.LoadScene("Level2");
+        }
+        else if (currentSceneName == "Level2")
+        {
+            SceneManager.LoadScene("Level3");
+        }
+    }
+    
 }

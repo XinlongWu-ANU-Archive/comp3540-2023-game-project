@@ -9,6 +9,8 @@ TagManager:
   - Fruit
   - Monster
   - Platform
+  - Gate
+  - EnterGate
   layers:
   - Default
   - TransparentFX

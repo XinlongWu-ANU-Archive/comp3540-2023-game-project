@@ -1,0 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Gate : MonoBehaviour
+{
+
+    public GameObject[] monsters;
+
+    bool allMonstersDestroyed;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        checkGate();
+    }
+
+    void checkGate() {
+        bool allMonstersDestroyed = true;
+        foreach (GameObject monster in monsters)
+        {
+            if (monster != null)
+            {
+                allMonstersDestroyed = false;
+                break;
+            }
+        }
+
+        if (allMonstersDestroyed)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+}
