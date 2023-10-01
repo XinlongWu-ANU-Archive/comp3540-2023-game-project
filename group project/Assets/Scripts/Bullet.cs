@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
             // If the object has an "Enemy" script, deal damage to it.
             if (enemy != null)
             {
-                enemy.takeDamage(damage);
+                enemy.TakeDamage(damage);
             }
 
             // Destroy the bullet.

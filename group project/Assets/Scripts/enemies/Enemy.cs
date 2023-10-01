@@ -20,7 +20,7 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    public void takeDamage (int hit){
+    public void TakeDamage (int hit){
         health -= hit;
     }
 }
