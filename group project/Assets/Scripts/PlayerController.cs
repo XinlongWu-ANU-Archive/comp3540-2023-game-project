@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // If the player trigger the EnterGate, player has passed current level and will enter next level
-        if (collision.CompareTag("EnterGate"))
+         if (collision.CompareTag("EnterGate"))
         {
             gateEntered = true;
             Debug.Log("Add Transition Scene");
@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
 
-        if (currentSceneName == "Leve0")
+        if (currentSceneName == "Level0")
         {
             SceneManager.LoadScene("Level1");
         }
