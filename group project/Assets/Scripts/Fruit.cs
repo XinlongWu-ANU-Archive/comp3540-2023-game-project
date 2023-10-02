@@ -21,6 +21,7 @@ public class Fruit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Destroy fruits once the player touch them. And add 5 score per fruilt.
         if (collision.CompareTag("Player"))
         {
             Destroy(gameObject);
