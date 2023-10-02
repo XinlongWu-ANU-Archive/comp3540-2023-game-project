@@ -6,6 +6,7 @@ public class Gate : MonoBehaviour
 {
 
     public GameObject[] monsters;
+    public GameObject hint;
 
     bool allMonstersDestroyed;
 
@@ -35,6 +36,8 @@ public class Gate : MonoBehaviour
         if (allMonstersDestroyed)
         {
             gameObject.SetActive(false);
+            if (hint != null)
+                hint.SetActive(true);
         }
     }
 }
