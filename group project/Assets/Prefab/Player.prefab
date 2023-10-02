@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8400620100719226257}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008969784, y: -0.060743213}
+  m_Offset: {x: -0.013244256, y: -0.08211577}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -106,7 +106,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7058058, y: 0.81839013}
+  m_Size: {x: 0.6972568, y: 0.775645}
   m_EdgeRadius: 0
 --- !u!114 &-7527081069019802908
 MonoBehaviour:
