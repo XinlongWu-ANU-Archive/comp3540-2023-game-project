@@ -12,6 +12,7 @@ TagManager:
   - Gate
   - EnterGate
   - ExitHint
+  - Win
   layers:
   - Default
   - TransparentFX
