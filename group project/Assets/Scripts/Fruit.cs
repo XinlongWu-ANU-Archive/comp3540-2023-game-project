@@ -26,7 +26,6 @@ public class Fruit : MonoBehaviour
         {
             Destroy(gameObject);
             gameManager.UpdateScore(scoreToAdd);
-            Debug.Log(gameManager.score);
         }
     }
 }

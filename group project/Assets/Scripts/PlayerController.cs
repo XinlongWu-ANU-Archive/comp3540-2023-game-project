@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    private GameManager gameManager;
     private bool gateEntered = false;
 
     private bool _faceToRight;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<BoxCollider2D>();
         playerRb2D = GetComponent<Rigidbody2D>();
@@ -59,6 +61,7 @@ public class PlayerController : MonoBehaviour
     void hited()
     {
         animator.Play("Hit");
+        gameManager.UpdateLife();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

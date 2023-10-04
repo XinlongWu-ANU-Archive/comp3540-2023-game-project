@@ -698,7 +698,7 @@ Transform:
   m_GameObject: {fileID: 286045880}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.9360046, y: 1.1953523, z: 0.106487066}
+  m_LocalPosition: {x: -6.9360046, y: 0.83, z: 0.106487066}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -785,8 +785,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bccb8cae9ac956a47a07c80fb950f156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 1049477695}
   score: 0
+  life: 0
+  hearts:
+  - {fileID: 455396726}
+  - {fileID: 1335418551}
+  - {fileID: 286045880}
 --- !u!4 &292078882
 Transform:
   m_ObjectHideFlags: 0
@@ -1200,7 +1205,7 @@ Transform:
   m_GameObject: {fileID: 455396726}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.906006, y: 1.1953523, z: 0.106487066}
+  m_LocalPosition: {x: -7.906006, y: 0.8299999, z: 0.106487066}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2336,7 +2341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -7.29599, y: 0.9053526}
+  m_AnchoredPosition: {x: -7.29599, y: 1.32}
   m_SizeDelta: {x: 159.0149, y: 29.1305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1049477695
@@ -2941,7 +2946,7 @@ Transform:
   m_GameObject: {fileID: 1335418551}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.4160156, y: 1.1953523, z: 0.106487066}
+  m_LocalPosition: {x: -7.4160156, y: 0.8299999, z: 0.106487066}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
