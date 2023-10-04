@@ -13,6 +13,10 @@ TagManager:
   - EnterGate
   - ExitHint
   - Win
+  - Score
+  - Life3
+  - Life2
+  - Life1
   layers:
   - Default
   - TransparentFX
