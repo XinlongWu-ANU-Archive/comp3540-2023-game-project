@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Trap"))
         {
             //Debug.Log("objecttag:"+collision.gameObject.tag);
             Vector2 hitPoint = collision.collider.ClosestPoint(transform.position);
@@ -77,15 +77,26 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("hitPoint.x: " + hitPoint.x);
             //Debug.Log("objBound: " + objBound);
 
-            isJump = false;
-            isFall = false;
-            if (hitPoint.y > collision.transform.position.y && (transform.position.x - hitPoint.x <= objBound && transform.position.x - hitPoint.x >= -objBound))
+            //isJump = false;
+            //isFall = false;
+            if (collision.gameObject.CompareTag("Platform"))
             {
-                //isJump = false;
-                //isFall = false;
+                if (hitPoint.y < collision.transform.position.y && (transform.position.x - hitPoint.x <= objBound && transform.position.x - hitPoint.x >= -objBound))
+                {
+                    isJump = false;
+                    isFall = false;
+                }
             }
+            else if (hitPoint.y > collision.transform.position.y && (transform.position.x - hitPoint.x <= objBound && transform.position.x - hitPoint.x >= -objBound))
+            {
+                isJump = false;
+                isFall = false;
+            }
+
+            if (collision.gameObject.CompareTag("Trap"))
+                hited();
         }
-        else if (collision.gameObject.CompareTag("Monster") || collision.gameObject.CompareTag("Trap"))
+        else if (collision.gameObject.CompareTag("Monster"))
         {
             hited();
         }
