@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     private bool gameOver;
     public bool isPaused;
 
+    public GameObject resumeButton;
+    public GameObject pauseButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,19 +58,24 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over!");
     }
 
-    private void PauseGame()
+    public void PauseGame()
     {
         isPaused = true;
 
+        pauseButton.SetActive(false);
+        resumeButton.SetActive(true);
         Time.timeScale = 0;
         
+
+
     }
 
-    private void ResumeGame()
+    public void ResumeGame()
     {
         isPaused = false;
-
+        resumeButton.SetActive(false);
         Time.timeScale = 1;
+        pauseButton.SetActive(true);
 
     }
 
