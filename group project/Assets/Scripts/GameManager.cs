@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,11 +21,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameOver = false;
-        isPaused = false;
-        score = 0;
-        life = 3;
-        scoreText.text = "Score: " + score;
+        StartGame();
     }
 
     // Update is called once per frame
@@ -60,6 +57,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         gameOver = true;
+        pauseButton.SetActive(false);
         gameOverUI.ShowGameOverUI(score);
     }
 
@@ -67,13 +65,11 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         isPaused = true;
-
         pauseButton.SetActive(false);
-        resumeButton.SetActive(true);
-        Time.timeScale = 0;
         
+        resumeButton.SetActive(true);
 
-
+        Time.timeScale = 0;
     }
 
     public void ResumeGame()
@@ -83,6 +79,23 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         pauseButton.SetActive(true);
 
+    }
+
+    public void StartGame()
+    {
+        gameOver = false;
+        isPaused = false;
+        Time.timeScale = 1;
+        score = 0;
+        life = 3;
+        scoreText.text = "Score: " + score;
+
+    }
+
+    public void RestartGame()
+    {
+        StartGame();
+        SceneManager.LoadScene("Level0");
     }
 
 }
