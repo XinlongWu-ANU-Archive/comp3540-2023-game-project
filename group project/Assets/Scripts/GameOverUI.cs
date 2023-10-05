@@ -26,6 +26,7 @@ public class GameOverUI : MonoBehaviour
 
     public void Retry()
     {
+        //Time.timeScale = 1;
         SceneManager.LoadScene("Level0");
     }
 }
