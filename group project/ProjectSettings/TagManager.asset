@@ -17,6 +17,8 @@ TagManager:
   - Life3
   - Life2
   - Life1
+  - PauseButton
+  - ResumeButton
   layers:
   - Default
   - TransparentFX

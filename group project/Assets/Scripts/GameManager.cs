@@ -10,11 +10,13 @@ public class GameManager : MonoBehaviour
     public int life;
     public GameObject[] hearts;
     private bool gameOver;
-    
+    public bool isPaused;
+
     // Start is called before the first frame update
     void Start()
     {
         gameOver = false;
+        isPaused = false;
         score = 0;
         life = 3;
         scoreText.text = "Score: " + score;
@@ -23,7 +25,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void UpdateScore(int scoreToAdd)
@@ -53,5 +54,23 @@ public class GameManager : MonoBehaviour
         gameOver = true;
         Debug.Log("Game Over!");
     }
+
+    private void PauseGame()
+    {
+        isPaused = true;
+
+        Time.timeScale = 0;
+        
+    }
+
+    private void ResumeGame()
+    {
+        isPaused = false;
+
+        Time.timeScale = 1;
+
+    }
+
+
 
 }
