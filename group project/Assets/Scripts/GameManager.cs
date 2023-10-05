@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +10,9 @@ public class GameManager : MonoBehaviour
     public int score;
     public int life;
     public GameObject[] hearts;
+    public GameOverUI gameOverUI;
     private bool gameOver;
-    public bool isPaused;
+    private bool isPaused;
 
     public GameObject resumeButton;
     public GameObject pauseButton;
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     public void UpdateScore(int scoreToAdd)
@@ -39,7 +42,8 @@ public class GameManager : MonoBehaviour
     public void UpdateLife()
     {
         life--;
-        if (life == 2) {
+        if (life == 2)
+        {
             hearts[2].SetActive(false);
         }
         if (life == 1)
@@ -53,10 +57,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void GameOver() {
+    private void GameOver()
+    {
         gameOver = true;
-        Debug.Log("Game Over!");
+        gameOverUI.ShowGameOverUI(score);
     }
+
 
     public void PauseGame()
     {
@@ -78,7 +84,5 @@ public class GameManager : MonoBehaviour
         pauseButton.SetActive(true);
 
     }
-
-
 
 }
