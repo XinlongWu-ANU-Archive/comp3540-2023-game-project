@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6364743537946790235}
   - component: {fileID: 5798322815975549399}
   - component: {fileID: 153951103704551956}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AngryPigHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 2560144943769632249}
   - component: {fileID: 4370701009545407893}
   - component: {fileID: 5237258568702071391}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AngryPig
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  speed: 0
+  speed: 1
   leftWaypoint: {fileID: 0}
   rightWaypoint: {fileID: 0}
 --- !u!50 &5237258568702071391
@@ -229,7 +229,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &7415528172155364471
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 6394563470437955709}
   - component: {fileID: 5326591447792218658}
   - component: {fileID: 7283996942041324411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AngryPigWalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
