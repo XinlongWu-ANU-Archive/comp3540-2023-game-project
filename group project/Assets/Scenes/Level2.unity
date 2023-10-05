@@ -19488,13 +19488,10 @@ MonoBehaviour:
   - {fileID: 1651382821}
   - {fileID: 418327404}
   - {fileID: 926780611}
-
   isPaused: 1
   resumeButton: {fileID: 856081163}
   pauseButton: {fileID: 863793673}
-=======
   gameOverUI: {fileID: 141805449}
-
 --- !u!4 &1212098242
 Transform:
   m_ObjectHideFlags: 0
