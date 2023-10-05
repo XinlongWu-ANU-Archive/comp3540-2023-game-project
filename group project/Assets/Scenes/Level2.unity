@@ -19488,10 +19488,9 @@ MonoBehaviour:
   - {fileID: 1651382821}
   - {fileID: 418327404}
   - {fileID: 926780611}
-  isPaused: 1
+  gameOverUI: {fileID: 141805449}
   resumeButton: {fileID: 856081163}
   pauseButton: {fileID: 863793673}
-  gameOverUI: {fileID: 141805449}
 --- !u!4 &1212098242
 Transform:
   m_ObjectHideFlags: 0
@@ -31790,7 +31789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2022591188
 RectTransform:
   m_ObjectHideFlags: 0
