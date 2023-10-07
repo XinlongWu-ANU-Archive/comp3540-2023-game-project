@@ -34,5 +34,10 @@ public class ObstaclesVerticalMover : MonoBehaviour
         {
             movingUp = true; // start to move up
         }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            movingUp = !movingUp; //start to move in the opposite direction
+        }
     }
 }
