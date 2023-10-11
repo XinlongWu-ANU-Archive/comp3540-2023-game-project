@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     private float speed = 5f;
     private float direction;
     public int damage =1;
+    public float maxflyTime = 1.0f;
+    private float flyTimer = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,9 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.right * direction * speed * Time.deltaTime);
+        flyTimer += Time.deltaTime;
+        if (flyTimer >= maxflyTime)
+            Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
