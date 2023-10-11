@@ -9,6 +9,7 @@ public class Gate : MonoBehaviour
 
     bool allMonstersDestroyed;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,9 +34,11 @@ public class Gate : MonoBehaviour
         }
         if (allMonstersDestroyed)
         {
+            SoundManager.instance.PlaySound(SoundManager.instance.gateOpenSound);
             gameObject.SetActive(false);
             if (hint != null)
                 hint.SetActive(true);
+           
         }
     }
 }
