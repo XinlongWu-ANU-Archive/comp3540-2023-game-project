@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
 
+    
+
+    // update life hearts when the player loses one life
     public void UpdateLife()
     {
         life--;

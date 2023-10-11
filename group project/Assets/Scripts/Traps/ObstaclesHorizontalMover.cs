@@ -9,7 +9,7 @@ public class ObstaclesHorizontalMover : MonoBehaviour
     public GameObject rightTerrain;
 
     private Rigidbody2D rb;
-    private bool movingRight = true; // 表示物体当前是否正在向右移动
+    private bool movingRight = true; 
 
     void Start()
     {
@@ -18,21 +18,21 @@ public class ObstaclesHorizontalMover : MonoBehaviour
 
     void Update()
     {
-        // 设置物体的速度
+        // Set the object's velocity
         float horizontalSpeed = movingRight ? speed : -speed;
         rb.velocity = new Vector2(horizontalSpeed, 0);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // 检查碰撞的对象并改变移动方向
+        // Check for colliding objects and change the movement direction.
         if (collision.gameObject == leftTerrain)
         {
-            movingRight = true; // 与leftTerrain碰撞，开始向右移动
+            movingRight = true; // Collide with leftTerrain, and start moving to the right
         }
         else if (collision.gameObject == rightTerrain)
         {
-            movingRight = false; // 与rightTerrain碰撞，开始向左移动
+            movingRight = false; // Collide with rightTerrain, and start moving to the left
         }
     }
 }
