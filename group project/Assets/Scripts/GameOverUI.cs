@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour
 {
+    private GameManager gameManager;
     public GameObject gameOverPanel;
     public GameObject startPagePanel;
     public Text scoreText;
@@ -14,6 +15,7 @@ public class GameOverUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         gameOverPanel.SetActive(false);
     }
 
@@ -34,6 +36,7 @@ public class GameOverUI : MonoBehaviour
     public void Play()
     {
         startPagePanel.SetActive(false);
+        gameManager.StartGame();
         Time.timeScale = 1;
     }
 }
