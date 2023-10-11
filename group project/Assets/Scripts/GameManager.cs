@@ -23,13 +23,20 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartGame();
+
+        if (SceneManager.GetActiveScene().name=="Level0")
+        {
+            Time.timeScale = 0;
+            pauseButton.SetActive(false);
+        }
+        else {
+            StartGame();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void UpdateScore(int scoreToAdd)
@@ -79,12 +86,12 @@ public class GameManager : MonoBehaviour
             hearts[1].SetActive(false);
             hearts[0].SetActive(true);
         }
-        /*else {
+        else {
             life = 3;
             hearts[2].SetActive(true);
             hearts[1].SetActive(true);
             hearts[0].SetActive(true);
-        }*/
+        }
     }
 
     private void GameOver()
@@ -118,8 +125,10 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         isPaused = false;
+        pauseButton.SetActive(true);
+        resumeButton.SetActive(false);
         Time.timeScale = 1;
-        if (isLevel0)
+        if (SceneManager.GetActiveScene().name == "Level0")
         {
             Time.timeScale = 0;
             score = 0;
@@ -133,8 +142,10 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        StartGame();
+        
         SceneManager.LoadScene("Level0");
+        //score = 0;
+        //life = 3;
     }
 
 }
