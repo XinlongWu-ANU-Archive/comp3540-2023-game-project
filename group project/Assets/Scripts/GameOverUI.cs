@@ -35,6 +35,7 @@ public class GameOverUI : MonoBehaviour
 
     public void Play()
     {
+        SoundManager.instance.PlaySound(SoundManager.instance.buttonSound, 0.1f);
         startPagePanel.SetActive(false);
         gameManager.StartGame();
         Time.timeScale = 1;

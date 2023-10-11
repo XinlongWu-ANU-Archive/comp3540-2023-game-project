@@ -34,7 +34,7 @@ public class Gate : MonoBehaviour
         }
         if (allMonstersDestroyed)
         {
-            SoundManager.instance.PlaySound(SoundManager.instance.gateOpenSound);
+            SoundManager.instance.PlaySound(SoundManager.instance.gateOpenSound, 0.3f);
             gameObject.SetActive(false);
             if (hint != null)
                 hint.SetActive(true);
