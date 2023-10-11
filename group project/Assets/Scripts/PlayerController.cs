@@ -5,11 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    private GameManager gameManager;
-    private BulletManager bulletManager;
+    protected GameManager gameManager;
 
     private bool _faceToRight = true;
-    private float speed = 3;
+    protected float speed = 3;
     private Rigidbody2D rigidbody2D;
     private float jumpForce = 5;
     private float hitForce = 2;
@@ -18,49 +17,25 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
-    private bool isShowing;
-    private float showTimer;
-    private float maxShowTime = 4.5f;
-
     // dont use following parameters directly, use getter and setter.
     private bool _isJump = false;
     private float _horizontalInput = 0f;
     private bool _isFall = false;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        bulletManager = GameObject.Find("BulletManager").GetComponent<BulletManager>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<BoxCollider2D>();
         playerRb2D = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-
-        if (SceneManager.GetActiveScene().name.Equals("Level0"))
-        {
-            isShowing = true;
-            gameManager.isLevel0 = true;
-            horizontalInput = 0.5f;
-        }
-        
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();        
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
-        if (isShowing)
-        {
-            transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
-            showTimer += Time.deltaTime;
-            if (showTimer >= maxShowTime)
-            {
-                isShowing = false;
-                bulletManager.shoot();
-            }
-            return;
-        }
         horizontalInput = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
 
@@ -124,7 +99,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isJump", value);
         }
     }
-    private float horizontalInput
+    protected float horizontalInput
     {
         get { return _horizontalInput; }
         set
