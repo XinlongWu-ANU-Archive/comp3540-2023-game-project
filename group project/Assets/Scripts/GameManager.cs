@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Text scoreText;
-    public int score;
-    public int life;
+    private static int score;
+    private static int life;
     public GameObject[] hearts;
     public GameOverUI gameOverUI;
     private bool gameOver;
@@ -57,6 +57,34 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ShowLife()
+    {
+        if (life == 3)
+        {
+            hearts[2].SetActive(true);
+            hearts[1].SetActive(true);
+            hearts[0].SetActive(true);
+        }
+        else if (life == 2)
+        {
+            hearts[2].SetActive(false);
+            hearts[1].SetActive(true);
+            hearts[0].SetActive(true);
+        }
+        else if (life == 1)
+        {
+            hearts[2].SetActive(false);
+            hearts[1].SetActive(false);
+            hearts[0].SetActive(true);
+        }
+        else {
+            life = 3;
+            hearts[2].SetActive(true);
+            hearts[1].SetActive(true);
+            hearts[0].SetActive(true);
+        }
+    }
+
     private void GameOver()
     {
         gameOver = true;
@@ -86,11 +114,17 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        string currentSceneName = SceneManager.GetActiveScene().name;
         gameOver = false;
         isPaused = false;
         Time.timeScale = 1;
-        score = 0;
-        life = 3;
+        if (currentSceneName == "Level0")
+        {
+            score = 0;
+            life = 3;
+        }
+            
+        ShowLife();
         scoreText.text = "Score: " + score;
 
     }
