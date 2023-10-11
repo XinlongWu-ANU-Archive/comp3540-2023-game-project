@@ -34,5 +34,6 @@ public class GameOverUI : MonoBehaviour
     public void Play()
     {
         startPagePanel.SetActive(false);
+        Time.timeScale = 1;
     }
 }

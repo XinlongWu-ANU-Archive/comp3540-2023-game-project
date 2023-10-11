@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     private GameManager gameManager;
-    private bool gateEntered = false;
+    private BulletManager bulletManager;
 
-    private bool _faceToRight;
+    private bool _faceToRight = true;
     private float speed = 3;
     private Rigidbody2D rigidbody2D;
     private float jumpForce = 5;
@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRb2D;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+
+    private bool isShowing;
+    private float showTimer;
+    private float maxShowTime = 4.5f;
 
     // dont use following parameters directly, use getter and setter.
     private bool _isJump = false;
@@ -27,16 +31,36 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        bulletManager = GameObject.Find("BulletManager").GetComponent<BulletManager>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<BoxCollider2D>();
         playerRb2D = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        if (SceneManager.GetActiveScene().name.Equals("Level0"))
+        {
+            isShowing = true;
+            gameManager.isLevel0 = true;
+            horizontalInput = 0.5f;
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isShowing)
+        {
+            transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
+            showTimer += Time.deltaTime;
+            if (showTimer >= maxShowTime)
+            {
+                isShowing = false;
+                bulletManager.shoot();
+            }
+            return;
+        }
         horizontalInput = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
 
@@ -144,7 +168,6 @@ public class PlayerController : MonoBehaviour
         // If the player trigger the EnterGate, player has passed current level and will enter next level
          if (collision.CompareTag("EnterGate"))
         {
-            gateEntered = true;
             Debug.Log("Add Transition Scene");
             LoadScene();
         }

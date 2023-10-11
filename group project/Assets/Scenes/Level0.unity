@@ -1023,6 +1023,9 @@ MonoBehaviour:
   - {fileID: 1335418551}
   - {fileID: 286045880}
   gameOverUI: {fileID: 1072950123}
+  isPaused: 0
+  isLevel0: 0
+  startPagePanel: {fileID: 0}
   resumeButton: {fileID: 950429974}
   pauseButton: {fileID: 482153208}
 --- !u!4 &292078882

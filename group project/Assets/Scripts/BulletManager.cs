@@ -25,7 +25,7 @@ public class BulletManager : MonoBehaviour
         }
     }
 
-    void shoot()
+    public void shoot()
     {
         Bullet bullet = Instantiate(bulletType, player.transform.position, Quaternion.identity).GetComponent<Bullet>();
 

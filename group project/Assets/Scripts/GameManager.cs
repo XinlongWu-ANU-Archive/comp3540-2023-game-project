@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] hearts;
     public GameOverUI gameOverUI;
     private bool gameOver;
-    private bool isPaused;
+    public bool isPaused;
+    public bool isLevel0 = false;
+    public GameObject startPagePanel;
 
     public GameObject resumeButton;
     public GameObject pauseButton;
@@ -88,7 +90,10 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         isPaused = false;
-        Time.timeScale = 1;
+        if (isLevel0)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
         score = 0;
         life = 3;
         scoreText.text = "Score: " + score;
