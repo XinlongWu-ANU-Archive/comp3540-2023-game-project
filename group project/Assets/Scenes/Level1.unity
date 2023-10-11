@@ -1219,6 +1219,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8354687572556358008, guid: 95b471947a31163449453d83bb8fde34, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3507597180911845942, guid: 95b471947a31163449453d83bb8fde34, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.02
@@ -3073,6 +3077,14 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5538290681502060042, guid: 0065ab3129b5a3a4a9445c0f98f01b07, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538290681502060042, guid: 0065ab3129b5a3a4a9445c0f98f01b07, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7677078028826689530, guid: 0065ab3129b5a3a4a9445c0f98f01b07, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.27
@@ -3232,8 +3244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 545056260}
-  score: 0
-  life: 0
   hearts:
   - {fileID: 1822571294}
   - {fileID: 1594535987}
@@ -8320,7 +8330,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40244b739a8664865ae90211a9f4dbc1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -10731,6 +10741,10 @@ PrefabInstance:
       value: 0.21191335
       objectReference: {fileID: 0}
     - target: {fileID: 5096345289937495123, guid: a46003991d98c4562b4b5be9eb58f1d9, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 40244b739a8664865ae90211a9f4dbc1, type: 2}
+    - target: {fileID: 5096345289937495123, guid: a46003991d98c4562b4b5be9eb58f1d9, type: 3}
       propertyPath: m_Offset.x
       value: -6.3210583
       objectReference: {fileID: 0}
@@ -10789,7 +10803,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40244b739a8664865ae90211a9f4dbc1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -15019,7 +15033,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40244b739a8664865ae90211a9f4dbc1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -15749,6 +15763,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.2120893
       objectReference: {fileID: 0}
+    - target: {fileID: 5096345289937495123, guid: a46003991d98c4562b4b5be9eb58f1d9, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 40244b739a8664865ae90211a9f4dbc1, type: 2}
     - target: {fileID: 5096345289937495123, guid: a46003991d98c4562b4b5be9eb58f1d9, type: 3}
       propertyPath: m_Offset.x
       value: -6.320753
@@ -18612,7 +18630,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40244b739a8664865ae90211a9f4dbc1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -19996,6 +20014,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.21351647
       objectReference: {fileID: 0}
+    - target: {fileID: 5096345289937495123, guid: a46003991d98c4562b4b5be9eb58f1d9, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 40244b739a8664865ae90211a9f4dbc1, type: 2}
     - target: {fileID: 5096345289937495123, guid: a46003991d98c4562b4b5be9eb58f1d9, type: 3}
       propertyPath: m_Offset.x
       value: -6.3209176
@@ -24177,6 +24199,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1102113915}
     m_Modifications:
+    - target: {fileID: 2856512474609392100, guid: 5842fc89f40c4714997d9603140ac964, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2856512474609392100, guid: 5842fc89f40c4714997d9603140ac964, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3808953753265916018, guid: 5842fc89f40c4714997d9603140ac964, type: 3}
       propertyPath: m_Name
       value: BlueBird
@@ -26575,6 +26605,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.2056545
       objectReference: {fileID: 0}
+    - target: {fileID: 5096345289937495123, guid: a46003991d98c4562b4b5be9eb58f1d9, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 40244b739a8664865ae90211a9f4dbc1, type: 2}
     - target: {fileID: 5096345289937495123, guid: a46003991d98c4562b4b5be9eb58f1d9, type: 3}
       propertyPath: m_Offset.x
       value: -6.32311

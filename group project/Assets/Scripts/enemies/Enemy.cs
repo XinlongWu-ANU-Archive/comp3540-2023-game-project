@@ -8,6 +8,7 @@ public abstract class Enemy : MonoBehaviour
     public int maxHealth;
     public float speed;
     public EnemyHealthBar hp;
+   
 
     
     // Start is called before the first frame update
