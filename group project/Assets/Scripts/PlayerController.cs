@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         gameManager.UpdateLife();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Trap"))
         {
@@ -81,7 +81,6 @@ public class PlayerController : MonoBehaviour
             {
                 hited();
             }
-            
         }
         else if (collision.gameObject.CompareTag("Monster"))
         {
@@ -138,7 +137,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
         // If the player trigger the EnterGate, player has passed current level and will enter next level
          if (collision.CompareTag("EnterGate"))
