@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
+    public AudioSource audioSource;
+    public AudioClip trapSound;
+
+
     // dont use following parameters directly, use getter and setter.
     private bool _isJump = false;
     private float _horizontalInput = 0f;
@@ -62,6 +66,10 @@ public class PlayerController : MonoBehaviour
     {
         animator.Play("Hit");
         gameManager.UpdateLife();
+        if (audioSource && trapSound)
+        {
+            audioSource.PlayOneShot(trapSound);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -81,6 +89,7 @@ public class PlayerController : MonoBehaviour
             if (collision.gameObject.CompareTag("Trap"))
             {
                 hited();
+                
             }
             
         }
