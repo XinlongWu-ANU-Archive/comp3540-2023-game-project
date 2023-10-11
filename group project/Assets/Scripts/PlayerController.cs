@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip trapSound;
+    public AudioClip jumpSound;
 
 
     // dont use following parameters directly, use getter and setter.
@@ -73,6 +74,10 @@ public class PlayerController : MonoBehaviour
             rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isJump = true;
             animator.Play("Jump");
+            if (audioSource && jumpSound)
+            {
+                audioSource.PlayOneShot(jumpSound);
+            }
         }
     }
 
