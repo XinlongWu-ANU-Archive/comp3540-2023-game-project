@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
     private float _horizontalInput = 0f;
     private bool _isFall = false;
 
+    private bool _isInvincibility = false;
+    private float invincibilityTimer = 0;
+    private float maxInvincibilityTime = 3f;
+
     // Start is called before the first frame update
     protected void Start()
     {
@@ -45,6 +49,17 @@ public class PlayerController : MonoBehaviour
         if (isJump && playerRb2D.velocity.y < -0.5f)
             isFall = true;
 
+        if (isInvincibility)
+        {
+            invincibilityTimer += Time.deltaTime;
+            if (invincibilityTimer >= maxInvincibilityTime)
+            {
+                //playerRb2D.bodyType = RigidbodyType2D.Dynamic;
+                //collider2D.isTrigger = false;
+                isInvincibility = false;
+            }
+        }
+
     }
 
     void jump()
@@ -59,8 +74,15 @@ public class PlayerController : MonoBehaviour
 
     void hited()
     {
-        animator.Play("Hit");
-        gameManager.UpdateLife();
+        if (!isInvincibility)
+        {
+            animator.Play("Hit");
+            isInvincibility = true;
+            //playerRb2D.bodyType = RigidbodyType2D.Kinematic;
+            //collider2D.isTrigger = true;
+            invincibilityTimer = 0;
+            gameManager.UpdateLife();
+        }
     }
 
     protected void OnCollisionEnter2D(Collision2D collision)
@@ -88,6 +110,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private bool isInvincibility
+    {
+        get
+        {
+            return _isInvincibility;
+        }
+        set
+        {
+            _isInvincibility = value;
+            animator.SetBool("isInvincibility", value);
+        }
+    }
+
 
     private bool isJump
     {
@@ -104,7 +139,7 @@ public class PlayerController : MonoBehaviour
         set
         {
             animator.SetBool("isRun", value != 0);
-            if (_horizontalInput == 0 && value != 0)
+            if (_horizontalInput == 0 && value != 0 && !isInvincibility)
                 animator.Play("Run");
             if (value < 0)
                 faceToRight = false;

@@ -1189,8 +1189,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1049477695}
-  score: 0
-  life: 0
   hearts:
   - {fileID: 455396726}
   - {fileID: 1335418551}
@@ -3984,6 +3982,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8354687572556358008, guid: 95b471947a31163449453d83bb8fde34, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3661922440243492226, guid: 95b471947a31163449453d83bb8fde34, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3661922440243492226, guid: 95b471947a31163449453d83bb8fde34, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3507597180911845942, guid: 95b471947a31163449453d83bb8fde34, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.517
