@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Text scoreText;
-    private static int score;
-    private static int life;
+    private static int score = 0;
+    private static int life = 3;
     public GameObject[] hearts;
     public GameOverUI gameOverUI;
     private bool gameOver;
@@ -77,12 +77,12 @@ public class GameManager : MonoBehaviour
             hearts[1].SetActive(false);
             hearts[0].SetActive(true);
         }
-        else {
+        /*else {
             life = 3;
             hearts[2].SetActive(true);
             hearts[1].SetActive(true);
             hearts[0].SetActive(true);
-        }
+        }*/
     }
 
     private void GameOver()
