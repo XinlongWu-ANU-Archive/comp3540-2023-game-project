@@ -17,11 +17,6 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
-    //public AudioSource audioSource;
-    //public AudioClip trapSound;
-    //public AudioClip jumpSound;
-
-
     // dont use following parameters directly, use getter and setter.
     private bool _isJump = false;
     private float _horizontalInput = 0f;
@@ -75,10 +70,6 @@ public class PlayerController : MonoBehaviour
             rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isJump = true;
             animator.Play("Jump");
-            //if (audioSource && jumpSound)
-            //{
-            //    audioSource.PlayOneShot(jumpSound);
-            //}
         }
     }
 
@@ -93,11 +84,6 @@ public class PlayerController : MonoBehaviour
             //collider2D.isTrigger = true;
             invincibilityTimer = 0;
             gameManager.UpdateLife();
-
-            //if (audioSource && trapSound)
-            //{
-            //    audioSource.PlayOneShot(trapSound);
-            //}
         }
     }
 

@@ -9324,6 +9324,8 @@ MonoBehaviour:
   audioSourcePrefab: {fileID: 4726662741040620360, guid: b86ab2f8e24604be89744a8997d3b628, type: 3}
   hitSound: {fileID: 8300000, guid: 1ed8fb76fc64e4e46847348138782234, type: 3}
   jumpSound: {fileID: 8300000, guid: 5708d77107cb74dd287928a1b3c2fd33, type: 3}
+  gateOpenSound: {fileID: 8300000, guid: 15e9f634e944e104dab8ac20d84b5e12, type: 3}
+  buttonSound: {fileID: 8300000, guid: ddd16025d5ef32249bf91ac485f99fd8, type: 3}
 --- !u!4 &879660510
 Transform:
   m_ObjectHideFlags: 0

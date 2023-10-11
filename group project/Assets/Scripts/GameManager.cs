@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
+        SoundManager.instance.PlaySound(SoundManager.instance.buttonSound, 0.1f);
         isPaused = true;
         pauseButton.SetActive(false);
         
@@ -107,6 +108,7 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        SoundManager.instance.PlaySound(SoundManager.instance.buttonSound, 0.1f);
         isPaused = false;
         resumeButton.SetActive(false);
         Time.timeScale = 1;
