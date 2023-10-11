@@ -17,9 +17,9 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
-    public AudioSource audioSource;
-    public AudioClip trapSound;
-    public AudioClip jumpSound;
+    //public AudioSource audioSource;
+    //public AudioClip trapSound;
+    //public AudioClip jumpSound;
 
 
     // dont use following parameters directly, use getter and setter.
@@ -71,13 +71,14 @@ public class PlayerController : MonoBehaviour
     {
         if (!isJump)
         {
+            SoundManager.instance.PlaySound(SoundManager.instance.jumpSound,0.1f);
             rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isJump = true;
             animator.Play("Jump");
-            if (audioSource && jumpSound)
-            {
-                audioSource.PlayOneShot(jumpSound);
-            }
+            //if (audioSource && jumpSound)
+            //{
+            //    audioSource.PlayOneShot(jumpSound);
+            //}
         }
     }
 
@@ -85,6 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isInvincibility)
         {
+            SoundManager.instance.PlaySound(SoundManager.instance.hitSound,0.1f);
             animator.Play("Hit");
             isInvincibility = true;
             //playerRb2D.bodyType = RigidbodyType2D.Kinematic;
@@ -92,10 +94,10 @@ public class PlayerController : MonoBehaviour
             invincibilityTimer = 0;
             gameManager.UpdateLife();
 
-            if (audioSource && trapSound)
-            {
-                audioSource.PlayOneShot(trapSound);
-            }
+            //if (audioSource && trapSound)
+            //{
+            //    audioSource.PlayOneShot(trapSound);
+            //}
         }
     }
 
