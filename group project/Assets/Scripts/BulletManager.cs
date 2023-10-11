@@ -6,6 +6,8 @@ public class BulletManager : MonoBehaviour
 {
     public Bullet bulletType;
     private PlayerController player;
+    private float shootGap = 0.3f;
+    private float shootTimer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +17,15 @@ public class BulletManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        shootTimer += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.Space) && shootTimer >= shootGap)
+        {
             shoot();
+            shootTimer = 0;
+        }
     }
 
-    void shoot()
+    public void shoot()
     {
         Bullet bullet = Instantiate(bulletType, player.transform.position, Quaternion.identity).GetComponent<Bullet>();
 

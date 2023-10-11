@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] hearts;
     public GameOverUI gameOverUI;
     private bool gameOver;
-    private bool isPaused;
+    public bool isPaused;
+    public bool isLevel0 = false;
+    public GameObject startPagePanel;
 
     public GameObject resumeButton;
     public GameObject pauseButton;
@@ -114,12 +116,12 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
         gameOver = false;
         isPaused = false;
         Time.timeScale = 1;
-        if (currentSceneName == "Level0")
+        if (isLevel0)
         {
+            Time.timeScale = 0;
             score = 0;
             life = 3;
         }

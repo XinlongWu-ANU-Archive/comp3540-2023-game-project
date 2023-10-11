@@ -5,11 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    private GameManager gameManager;
-    private bool gateEntered = false;
+    protected GameManager gameManager;
 
-    private bool _faceToRight;
-    private float speed = 3;
+    private bool _faceToRight = true;
+    protected float speed = 3;
     private Rigidbody2D rigidbody2D;
     private float jumpForce = 5;
     private float hitForce = 2;
@@ -27,19 +26,23 @@ public class PlayerController : MonoBehaviour
     private float _horizontalInput = 0f;
     private bool _isFall = false;
 
+    private bool _isInvincibility = false;
+    private float invincibilityTimer = 0;
+    private float maxInvincibilityTime = 3f;
+
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<BoxCollider2D>();
         playerRb2D = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();        
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
@@ -49,6 +52,17 @@ public class PlayerController : MonoBehaviour
 
         if (isJump && playerRb2D.velocity.y < -0.5f)
             isFall = true;
+
+        if (isInvincibility)
+        {
+            invincibilityTimer += Time.deltaTime;
+            if (invincibilityTimer >= maxInvincibilityTime)
+            {
+                //playerRb2D.bodyType = RigidbodyType2D.Dynamic;
+                //collider2D.isTrigger = false;
+                isInvincibility = false;
+            }
+        }
 
     }
 
@@ -64,15 +78,23 @@ public class PlayerController : MonoBehaviour
 
     void hited()
     {
-        animator.Play("Hit");
-        gameManager.UpdateLife();
-        if (audioSource && trapSound)
+        if (!isInvincibility)
         {
-            audioSource.PlayOneShot(trapSound);
+            animator.Play("Hit");
+            isInvincibility = true;
+            //playerRb2D.bodyType = RigidbodyType2D.Kinematic;
+            //collider2D.isTrigger = true;
+            invincibilityTimer = 0;
+            gameManager.UpdateLife();
+
+            if (audioSource && trapSound)
+            {
+                audioSource.PlayOneShot(trapSound);
+            }
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Trap"))
         {
@@ -91,11 +113,23 @@ public class PlayerController : MonoBehaviour
                 hited();
                 
             }
-            
         }
         else if (collision.gameObject.CompareTag("Monster"))
         {
             hited();
+        }
+    }
+
+    private bool isInvincibility
+    {
+        get
+        {
+            return _isInvincibility;
+        }
+        set
+        {
+            _isInvincibility = value;
+            animator.SetBool("isInvincibility", value);
         }
     }
 
@@ -109,13 +143,13 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isJump", value);
         }
     }
-    private float horizontalInput
+    protected float horizontalInput
     {
         get { return _horizontalInput; }
         set
         {
             animator.SetBool("isRun", value != 0);
-            if (_horizontalInput == 0 && value != 0)
+            if (_horizontalInput == 0 && value != 0 && !isInvincibility)
                 animator.Play("Run");
             if (value < 0)
                 faceToRight = false;
@@ -148,12 +182,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
         // If the player trigger the EnterGate, player has passed current level and will enter next level
          if (collision.CompareTag("EnterGate"))
         {
-            gateEntered = true;
             Debug.Log("Add Transition Scene");
             LoadScene();
         }

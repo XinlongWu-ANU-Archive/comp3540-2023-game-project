@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GameOverUI : MonoBehaviour
 {
     public GameObject gameOverPanel;
+    public GameObject startPagePanel;
     public Text scoreText;
 
     // Start is called before the first frame update
@@ -28,5 +29,11 @@ public class GameOverUI : MonoBehaviour
     {
         //Time.timeScale = 1;
         SceneManager.LoadScene("Level0");
+    }
+
+    public void Play()
+    {
+        startPagePanel.SetActive(false);
+        Time.timeScale = 1;
     }
 }
