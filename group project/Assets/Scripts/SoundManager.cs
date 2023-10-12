@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip buttonSound;
     public AudioClip fruitSound;
     public AudioClip shootingSound;
+    
 
     private void Awake()
     {

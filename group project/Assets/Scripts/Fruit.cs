@@ -24,7 +24,7 @@ public class Fruit : MonoBehaviour
         // Destroy fruits once the player touch them. And add 5 score per fruilt.
         if (collision.CompareTag("Player"))
         {
-            SoundManager.instance.PlaySound(SoundManager.instance.fruitSound, 0.1f);
+            SoundManager.instance.PlaySound(SoundManager.instance.fruitSound, 0.2f);
             Destroy(gameObject);
             gameManager.UpdateScore(scoreToAdd);
         }

@@ -19,11 +19,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject resumeButton;
     public GameObject pauseButton;
+    //public AudioClip startBGM;
+    //public AudioSource playBGM;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        //playBGM = GetComponent<AudioSource>();
         if (SceneManager.GetActiveScene().name=="Level0")
         {
             Time.timeScale = 0;

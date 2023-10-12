@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isJump)
         {
-            SoundManager.instance.PlaySound(SoundManager.instance.jumpSound,0.1f);
+            SoundManager.instance.PlaySound(SoundManager.instance.jumpSound,0.2f);
             rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isJump = true;
             animator.Play("Jump");
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isInvincibility)
         {
-            SoundManager.instance.PlaySound(SoundManager.instance.hitSound,0.1f);
+            SoundManager.instance.PlaySound(SoundManager.instance.hitSound,0.2f);
             animator.Play("Hit");
             isInvincibility = true;
             //playerRb2D.bodyType = RigidbodyType2D.Kinematic;
