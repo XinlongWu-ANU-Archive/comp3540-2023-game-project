@@ -11,17 +11,14 @@ public class EnemyPig : Enemy
 
     private Transform targetWaypoint; // Current target waypoint
 
-    private SpriteRenderer spriteRenderer; // Reference to the SpriteRenderer component
 
     // Start is called before the first frame update
     void Start()
     {
+        base.Start();
         // Initialize the starting position and direction
         transform.position = leftWaypoint.position;
-        targetWaypoint = leftWaypoint; // Start by moving to the right
-
-        // Get a reference to the SpriteRenderer component
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        targetWaypoint = leftWaypoint; // Start by moving to the right 
     }
 
     // Update is called once per frame
@@ -45,12 +42,12 @@ public class EnemyPig : Enemy
             if (movingRight)
             {
                 targetWaypoint = rightWaypoint;
-                spriteRenderer.flipX = true; // Flip sprite to face left
+                sr.flipX = true; // Flip sprite to face left
             }
             else
             {
                 targetWaypoint = leftWaypoint;
-                spriteRenderer.flipX = false; // Flip sprite to face right
+                sr.flipX = false; // Flip sprite to face right
             }
             movingRight = !movingRight;
         }

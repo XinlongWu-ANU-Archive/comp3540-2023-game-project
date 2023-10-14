@@ -102,7 +102,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 7e73bb42c48fa0043900eaf8ab2b4650, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -198,6 +198,8 @@ MonoBehaviour:
   maxHealth: 7
   speed: 0
   hp: {fileID: 1706817309057712640}
+  sr: {fileID: 0}
+  flashTime: 0.3
   seed: {fileID: 3997479887837634801, guid: 1c1eaf7a5ad44ef43980ec222126b2da, type: 3}
   shootPos: {fileID: 0}
   shootingInterval: 0.8

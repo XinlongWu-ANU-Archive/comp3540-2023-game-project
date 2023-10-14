@@ -3608,11 +3608,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3507597180911845942, guid: 95b471947a31163449453d83bb8fde34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4
+      value: -7.2
       objectReference: {fileID: 0}
     - target: {fileID: 3507597180911845942, guid: 95b471947a31163449453d83bb8fde34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.89
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 3507597180911845942, guid: 95b471947a31163449453d83bb8fde34, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4883,17 +4883,13 @@ PrefabInstance:
       value: BlueBird_1
       objectReference: {fileID: 0}
     - target: {fileID: 4474423121786289081, guid: 5842fc89f40c4714997d9603140ac964, type: 3}
-      propertyPath: health
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4474423121786289081, guid: 5842fc89f40c4714997d9603140ac964, type: 3}
-      propertyPath: lineOfSite
-      value: 2.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4474423121786289081, guid: 5842fc89f40c4714997d9603140ac964, type: 3}
       propertyPath: startPoint
       value: 
       objectReference: {fileID: 119111979}
+    - target: {fileID: 4474423121786289081, guid: 5842fc89f40c4714997d9603140ac964, type: 3}
+      propertyPath: DeathParticle
+      value: 
+      objectReference: {fileID: 8692054935454161523, guid: b8d3c97e5037ad64f89aa1273b1ec8c7, type: 3}
     - target: {fileID: 9207415401566360146, guid: 5842fc89f40c4714997d9603140ac964, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.87
@@ -17939,7 +17935,7 @@ Transform:
   m_GameObject: {fileID: 1004660104}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.54, y: -2.26, z: 0}
+  m_LocalPosition: {x: 4.69, y: -2.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29756,13 +29752,13 @@ PrefabInstance:
       value: AngryPig_1
       objectReference: {fileID: 0}
     - target: {fileID: 4370701009545407893, guid: 0065ab3129b5a3a4a9445c0f98f01b07, type: 3}
-      propertyPath: health
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4370701009545407893, guid: 0065ab3129b5a3a4a9445c0f98f01b07, type: 3}
       propertyPath: leftWaypoint
       value: 
       objectReference: {fileID: 2020494247}
+    - target: {fileID: 4370701009545407893, guid: 0065ab3129b5a3a4a9445c0f98f01b07, type: 3}
+      propertyPath: DeathParticle
+      value: 
+      objectReference: {fileID: 8692054935454161523, guid: b8d3c97e5037ad64f89aa1273b1ec8c7, type: 3}
     - target: {fileID: 4370701009545407893, guid: 0065ab3129b5a3a4a9445c0f98f01b07, type: 3}
       propertyPath: rightWaypoint
       value: 
@@ -40267,6 +40263,10 @@ PrefabInstance:
       propertyPath: shootPos
       value: 
       objectReference: {fileID: 739554409}
+    - target: {fileID: 7862165391285212656, guid: 32fd87177f32f9042a0f5734f09b180a, type: 3}
+      propertyPath: DeathParticle
+      value: 
+      objectReference: {fileID: 8692054935454161523, guid: b8d3c97e5037ad64f89aa1273b1ec8c7, type: 3}
     - target: {fileID: 7862165391285212656, guid: 32fd87177f32f9042a0f5734f09b180a, type: 3}
       propertyPath: shootingRange1
       value: 
