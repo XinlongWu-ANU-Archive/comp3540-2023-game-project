@@ -111,6 +111,11 @@ public class PlayerController : MonoBehaviour
         {
             hited();
         }
+        else if (collision.gameObject.CompareTag("Seed"))
+        {
+            hited();
+        }
+
     }
 
     private bool isInvincibility

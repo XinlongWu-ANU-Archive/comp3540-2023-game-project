@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8743350755464796792}
   - component: {fileID: 5413655135395143219}
   - component: {fileID: 5464314310222131502}
-  - component: {fileID: 465496686808172188}
+  - component: {fileID: 7862165391285212656}
   m_Layer: 0
   m_Name: Trunk
   m_TagString: Monster
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -5219337101871392587, guid: bf4df7b2c9cda4c44b372e2b47a5cb8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -136,7 +136,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!61 &5464314310222131502
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -182,7 +182,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26150727, y: 0.25862268}
   m_EdgeRadius: 0
---- !u!114 &465496686808172188
+--- !u!114 &7862165391285212656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,6 +198,11 @@ MonoBehaviour:
   maxHealth: 7
   speed: 0
   hp: {fileID: 1706817309057712640}
+  seed: {fileID: 3997479887837634801, guid: 1c1eaf7a5ad44ef43980ec222126b2da, type: 3}
+  shootPos: {fileID: 0}
+  shootingInterval: 0.8
+  shootingRange1: {fileID: 0}
+  shootingRange2: {fileID: 0}
 --- !u!1001 &5608532983572586747
 PrefabInstance:
   m_ObjectHideFlags: 0

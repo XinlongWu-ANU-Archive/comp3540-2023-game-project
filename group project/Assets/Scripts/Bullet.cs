@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-     // Check if the bullet collided with a "Monster" or "Bird" tagged object.
+     // Check if the bullet collided with a "Monster" object.
         if (collision.CompareTag("Monster"))
         {
             // Get the script component (assuming it has one) from the collided object.
@@ -45,6 +45,10 @@ public class Bullet : MonoBehaviour
         else if (collision.CompareTag("Terrain"))
         {
             // Destroy the bullet when it hits "Terrain."
+            Destroy(gameObject);
+        }
+        else if (collision.CompareTag("Seed"))
+        {
             Destroy(gameObject);
         }
     }
