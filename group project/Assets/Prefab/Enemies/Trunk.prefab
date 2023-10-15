@@ -222,6 +222,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_hp
       objectReference: {fileID: 0}
+    - target: {fileID: 5553611617957678374, guid: 962473230865f7846afabcbe8332041a, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553611617957678374, guid: 962473230865f7846afabcbe8332041a, type: 3}
+      propertyPath: m_Pivot.y
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553611617957678374, guid: 962473230865f7846afabcbe8332041a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553611617957678374, guid: 962473230865f7846afabcbe8332041a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 13.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553611617957678374, guid: 962473230865f7846afabcbe8332041a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553611617957678374, guid: 962473230865f7846afabcbe8332041a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5.2109985
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553611617957678374, guid: 962473230865f7846afabcbe8332041a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23.290009
+      objectReference: {fileID: 0}
     - target: {fileID: 7495288107557597638, guid: 962473230865f7846afabcbe8332041a, type: 3}
       propertyPath: m_Value
       value: 7
