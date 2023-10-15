@@ -18724,6 +18724,7 @@ MonoBehaviour:
   - {fileID: 418327404}
   - {fileID: 926780611}
   gameOverUI: {fileID: 141805449}
+  gameOver: 0
   isPaused: 0
   isLevel0: 0
   startPagePanel: {fileID: 0}
@@ -29648,6 +29649,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8650967908123088350, guid: 0065ab3129b5a3a4a9445c0f98f01b07, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1212098241}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30604,6 +30609,10 @@ PrefabInstance:
       propertyPath: speed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1706817309057712640, guid: 32fd87177f32f9042a0f5734f09b180a, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1212098241}
     - target: {fileID: 2556437372693502420, guid: 32fd87177f32f9042a0f5734f09b180a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -32536,6 +32545,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 486904010}
     m_Modifications:
+    - target: {fileID: 1401113733020959280, guid: 5842fc89f40c4714997d9603140ac964, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1212098241}
     - target: {fileID: 2856512474609392100, guid: 5842fc89f40c4714997d9603140ac964, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

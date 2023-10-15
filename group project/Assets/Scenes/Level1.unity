@@ -3121,6 +3121,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8650967908123088350, guid: 0065ab3129b5a3a4a9445c0f98f01b07, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 279689845}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3246,6 +3250,7 @@ MonoBehaviour:
   - {fileID: 1594535987}
   - {fileID: 1100455405}
   gameOverUI: {fileID: 285183260}
+  gameOver: 0
   isPaused: 0
   isLevel0: 0
   startPagePanel: {fileID: 0}
@@ -24209,6 +24214,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1102113915}
     m_Modifications:
+    - target: {fileID: 1401113733020959280, guid: 5842fc89f40c4714997d9603140ac964, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 279689845}
     - target: {fileID: 2856512474609392100, guid: 5842fc89f40c4714997d9603140ac964, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

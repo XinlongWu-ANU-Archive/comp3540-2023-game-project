@@ -1195,6 +1195,7 @@ MonoBehaviour:
   - {fileID: 1335418551}
   - {fileID: 286045880}
   gameOverUI: {fileID: 1072950123}
+  gameOver: 0
   isPaused: 0
   isLevel0: 0
   startPagePanel: {fileID: 0}
@@ -3966,6 +3967,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8650967908123088350, guid: 0065ab3129b5a3a4a9445c0f98f01b07, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 292078881}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
