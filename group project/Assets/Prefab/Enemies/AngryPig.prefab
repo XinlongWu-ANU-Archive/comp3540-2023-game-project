@@ -100,6 +100,7 @@ MonoBehaviour:
   hp: {fileID: 8650967908123088350}
   sr: {fileID: 0}
   flashTime: 0.3
+  DeathParticle: {fileID: 8692054935454161523, guid: b8d3c97e5037ad64f89aa1273b1ec8c7, type: 3}
   leftWaypoint: {fileID: 0}
   rightWaypoint: {fileID: 0}
 --- !u!50 &5237258568702071391

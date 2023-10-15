@@ -200,6 +200,7 @@ MonoBehaviour:
   hp: {fileID: 1706817309057712640}
   sr: {fileID: 0}
   flashTime: 0.3
+  DeathParticle: {fileID: 8692054935454161523, guid: b8d3c97e5037ad64f89aa1273b1ec8c7, type: 3}
   seed: {fileID: 3997479887837634801, guid: 1c1eaf7a5ad44ef43980ec222126b2da, type: 3}
   shootPos: {fileID: 0}
   shootingInterval: 0.8

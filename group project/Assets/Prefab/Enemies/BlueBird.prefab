@@ -100,6 +100,7 @@ MonoBehaviour:
   hp: {fileID: 1401113733020959280}
   sr: {fileID: 0}
   flashTime: 0.3
+  DeathParticle: {fileID: 8692054935454161523, guid: b8d3c97e5037ad64f89aa1273b1ec8c7, type: 3}
   lineOfSite: 2.12
   startPoint: {fileID: 0}
   obstacleLayer:

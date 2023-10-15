@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private static int life = 3;
     public GameObject[] hearts;
     public GameOverUI gameOverUI;
-    private bool gameOver;
+    public bool gameOver;
     public bool isPaused;
     public bool isLevel0 = false;
     public GameObject startPagePanel;
