@@ -27,8 +27,10 @@ public class BulletManager : MonoBehaviour
 
     public void shoot()
     {
-        Bullet bullet = Instantiate(bulletType, player.transform.position, Quaternion.identity).GetComponent<Bullet>();
 
+        Bullet bullet = Instantiate(bulletType, 
+            player.transform.position, Quaternion.identity).GetComponent<Bullet>();
+        SoundManager.instance.PlaySound(SoundManager.instance.shootingSound, 0.2f);
         bullet.Direction = player.faceToRight ? 1f : -1f;
     }
 }

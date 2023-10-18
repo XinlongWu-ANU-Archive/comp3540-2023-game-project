@@ -12,18 +12,20 @@ public class GameManager : MonoBehaviour
     private static int life = 3;
     public GameObject[] hearts;
     public GameOverUI gameOverUI;
-    private bool gameOver;
+    public bool gameOver;
     public bool isPaused;
     public bool isLevel0 = false;
     public GameObject startPagePanel;
 
     public GameObject resumeButton;
     public GameObject pauseButton;
+    //public AudioClip startBGM;
+    //public AudioSource playBGM;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        //playBGM = GetComponent<AudioSource>();
         if (SceneManager.GetActiveScene().name=="Level0")
         {
             Time.timeScale = 0;

@@ -13,6 +13,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip gateOpenSound;
     public AudioClip buttonSound;
+    public AudioClip fruitSound;
+    public AudioClip shootingSound;
+    
 
     private void Awake()
     {

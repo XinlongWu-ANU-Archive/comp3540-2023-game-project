@@ -24,7 +24,7 @@ public class GameOverUI : MonoBehaviour
         // Pause the game
         Time.timeScale = 0;
         gameOverPanel.SetActive(true);
-        scoreText.text = finalScore.ToString();
+        //scoreText.text = finalScore.ToString();
     }
 
     public void Retry()
@@ -35,6 +35,7 @@ public class GameOverUI : MonoBehaviour
 
     public void Play()
     {
+        SoundManager.instance.PlaySound(SoundManager.instance.buttonSound, 0.1f);
         startPagePanel.SetActive(false);
         gameManager.StartGame();
         Time.timeScale = 1;
