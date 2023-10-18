@@ -46,11 +46,11 @@ public class EnemyTrunk : Enemy
                     Shoot();
                     timer = 0;
                 }
+            } else {
+                anim.SetTrigger("Idle");// Set to idle if outside shooting area
             }
         }
     }
-    
-
 
     void Shoot()
     {
