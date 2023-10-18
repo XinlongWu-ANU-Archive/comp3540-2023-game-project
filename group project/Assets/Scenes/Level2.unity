@@ -17063,7 +17063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSwingAngle: 30
-  rotateSpeed: 40
+  rotateSpeed: 20
   angle: 30
   rotateCenter: {fileID: 1468209936}
 --- !u!1 &1106381519
@@ -17985,7 +17985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSwingAngle: 30
-  rotateSpeed: 30
+  rotateSpeed: 20
   angle: 30
   rotateCenter: {fileID: 1610766141}
 --- !u!1 &1180282096
@@ -31562,7 +31562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSwingAngle: 30
-  rotateSpeed: 30
+  rotateSpeed: 20
   angle: 30
   rotateCenter: {fileID: 2113820074}
 --- !u!1 &2113820073
