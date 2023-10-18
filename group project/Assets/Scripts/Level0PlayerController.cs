@@ -10,6 +10,7 @@ public class Level0PlayerController : PlayerController
     private BulletManager bulletManager;
     public GameObject moveHint;
     public GameObject monstersHint;
+    public GameObject killHint;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,12 @@ public class Level0PlayerController : PlayerController
         if (collision.CompareTag("Hint"))
         {
             moveHint.SetActive(true);
+        }
+        
+        if (collision.CompareTag("KillHint"))
+        {
+            Debug.Log("jin");
+            killHint.SetActive(true);
         }
         else
             base.OnTriggerEnter2D(collision);

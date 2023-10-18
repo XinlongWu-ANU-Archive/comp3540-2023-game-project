@@ -22,6 +22,7 @@ TagManager:
   - Hint
   - Seed
   - Bullet
+  - KillHint
   layers:
   - Default
   - TransparentFX
