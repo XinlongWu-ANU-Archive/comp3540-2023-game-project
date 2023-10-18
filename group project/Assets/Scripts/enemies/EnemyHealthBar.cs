@@ -21,7 +21,8 @@ public class EnemyHealthBar : MonoBehaviour
     {
         if (gameManager.gameOver) // Check if the game is over based on the GameManager's variable
     {
-        Destroy(transform.parent.gameObject); // Destroy the parent GameObject, which includes the health bar
+            Destroy(gameObject);
+            //Destroy(transform.parent.gameObject); // Destroy the parent GameObject, which includes the health bar
     }
     else
     {

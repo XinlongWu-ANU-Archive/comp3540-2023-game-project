@@ -520,7 +520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &84043430
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6139,7 +6139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveHint: {fileID: 84043429}
   monstersHint: {fileID: 1809023811}
-  killHint: {fileID: 160861929}
+  killHint: {fileID: 0}
 --- !u!1001 &1767623318
 PrefabInstance:
   m_ObjectHideFlags: 0

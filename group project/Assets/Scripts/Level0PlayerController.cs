@@ -58,7 +58,6 @@ public class Level0PlayerController : PlayerController
         
         if (collision.CompareTag("KillHint"))
         {
-            Debug.Log("jin");
             killHint.SetActive(true);
         }
         else
