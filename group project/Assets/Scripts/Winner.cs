@@ -7,15 +7,18 @@ using UnityEngine.SceneManagement;
 public class Winner : MonoBehaviour
 { 
     public TextMeshProUGUI winnerText;
+    public TextMeshProUGUI winnerScoreText;
     public GameObject restartButton;
     public GameObject[] monsters;
     public GameObject winHint;
+    public GameManager gameManager;
     bool allMonstersDestroyed;
 
     // Start is called before the first frame update
     void Start()
     {
         winnerText.gameObject.SetActive(false);
+        winnerScoreText.gameObject.SetActive(false);
         restartButton.SetActive(false);
         allMonstersDestroyed = false;
 
@@ -58,6 +61,9 @@ public class Winner : MonoBehaviour
 
     private void Win()
     {
+        winnerScoreText.gameObject.SetActive(true);
+        winnerScoreText.text = "Final Score: " + gameManager.score;
+
         winnerText.gameObject.SetActive(true);
         Time.timeScale = 0f; // Pause the game
         restartButton.SetActive(true);
