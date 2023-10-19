@@ -1172,6 +1172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1049477695}
+  score: 0
   hearts:
   - {fileID: 455396726}
   - {fileID: 1335418551}
@@ -5826,6 +5827,7 @@ GameObject:
   - component: {fileID: 1559952888}
   - component: {fileID: 1559952887}
   - component: {fileID: 1559952886}
+  - component: {fileID: 1559952889}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5907,6 +5909,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1559952889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559952885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1ad8f7d899b204d9820fb6885d8a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeMagnitude: 0.02
+  shakeTime: 0.5
 --- !u!1001 &1577027162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6137,6 +6153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6c5137e6c2d44219a66bb61c697926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraShake: {fileID: 1559952889}
   moveHint: {fileID: 84043429}
   monstersHint: {fileID: 1809023811}
   killHint: {fileID: 0}

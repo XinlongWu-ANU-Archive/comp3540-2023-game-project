@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private bool _isInvincibility = false;
     private float invincibilityTimer = 0;
     private float maxInvincibilityTime = 3f;
+    public CameraShake cameraShake;
 
     // Start is called before the first frame update
     protected void Start()
@@ -80,6 +81,7 @@ public class PlayerController : MonoBehaviour
             SoundManager.instance.PlaySound(SoundManager.instance.hitSound,0.2f);
             animator.Play("Hit");
             isInvincibility = true;
+            cameraShake.ShakeCamera();
             //playerRb2D.bodyType = RigidbodyType2D.Kinematic;
             //collider2D.isTrigger = true;
             invincibilityTimer = 0;
