@@ -1172,6 +1172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1049477695}
+  score: 0
   hearts:
   - {fileID: 455396726}
   - {fileID: 1335418551}
@@ -6139,7 +6140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveHint: {fileID: 84043429}
   monstersHint: {fileID: 1809023811}
-  killHint: {fileID: 0}
+  killHint: {fileID: 160861929}
 --- !u!1001 &1767623318
 PrefabInstance:
   m_ObjectHideFlags: 0
