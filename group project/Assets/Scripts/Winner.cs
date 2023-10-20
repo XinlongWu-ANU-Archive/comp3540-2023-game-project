@@ -62,7 +62,7 @@ public class Winner : MonoBehaviour
     private void Win()
     {
         winnerScoreText.gameObject.SetActive(true);
-        winnerScoreText.text = "Final Score: " + gameManager.score;
+        winnerScoreText.text = "Final Score: " + GameManager.score.ToString();
 
         winnerText.gameObject.SetActive(true);
         Time.timeScale = 0f; // Pause the game

@@ -24,7 +24,7 @@ public class GameOverUI : MonoBehaviour
         // Pause the game
         Time.timeScale = 0;
         gameOverPanel.SetActive(true);
-        //scoreText.text = finalScore.ToString();
+        scoreText.text = finalScore.ToString();
     }
 
     public void Retry()
