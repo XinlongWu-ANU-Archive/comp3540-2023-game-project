@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Text scoreText;
-    public int score = 0;
+    public static int score = 0;
     private static int life = 3;
     public GameObject[] hearts;
     public GameOverUI gameOverUI;
