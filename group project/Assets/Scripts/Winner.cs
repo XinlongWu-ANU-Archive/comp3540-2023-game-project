@@ -1,25 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Winner : MonoBehaviour
 { 
-    public TextMeshProUGUI winnerText;
-    public TextMeshProUGUI winnerScoreText;
-    public GameObject restartButton;
     public GameObject[] monsters;
     public GameObject winHint;
+    public GameObject winPanel;
+    public Text scoreText;
     public GameManager gameManager;
     bool allMonstersDestroyed;
 
     // Start is called before the first frame update
     void Start()
     {
-        winnerText.gameObject.SetActive(false);
-        winnerScoreText.gameObject.SetActive(false);
-        restartButton.SetActive(false);
+        winPanel.SetActive(false);
         allMonstersDestroyed = false;
 
     }
@@ -61,12 +55,9 @@ public class Winner : MonoBehaviour
 
     private void Win()
     {
-        winnerScoreText.gameObject.SetActive(true);
-        winnerScoreText.text = "Final Score: " + GameManager.score.ToString();
-
-        winnerText.gameObject.SetActive(true);
+        winPanel.SetActive(true);
+        scoreText.text = GameManager.score.ToString();
         Time.timeScale = 0f; // Pause the game
-        restartButton.SetActive(true);
     }
 
   

@@ -187,7 +187,6 @@ public class PlayerController : MonoBehaviour
         // If the player trigger the EnterGate, player has passed current level and will enter next level
          if (collision.CompareTag("EnterGate"))
         {
-            Debug.Log("Add Transition Scene");
             LoadScene();
         }
     }
