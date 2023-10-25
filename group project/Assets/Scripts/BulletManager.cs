@@ -18,7 +18,7 @@ public class BulletManager : MonoBehaviour
     void Update()
     {
         shootTimer += Time.deltaTime;
-        if ((Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Z))&& shootTimer >= shootGap)
+        if ((Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.S))&& shootTimer >= shootGap)
         {
             shoot();
             shootTimer = 0;
