@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
 
-        if  (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        if  (Input.GetKeyDown(KeyCode.Space))
             jump();
 
         if (isJump && playerRb2D.velocity.y < -0.5f)

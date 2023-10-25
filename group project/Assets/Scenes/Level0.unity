@@ -520,7 +520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &84043430
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1172,7 +1172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1049477695}
-  score: 0
   hearts:
   - {fileID: 455396726}
   - {fileID: 1335418551}
@@ -3513,8 +3512,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180.46, y: -30}
-  m_SizeDelta: {x: 172.94, y: 30}
+  m_AnchoredPosition: {x: 166.5, y: -30}
+  m_SizeDelta: {x: 200.86, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &935458564
 MonoBehaviour:
@@ -4698,8 +4697,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 89, y: 0}
-  m_SizeDelta: {x: 361.0344, y: 30}
+  m_AnchoredPosition: {x: 94.8, y: 0}
+  m_SizeDelta: {x: 349.44, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1216599005
 MonoBehaviour:
@@ -6122,7 +6121,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '''W'' OR ''UP KEY'''
+  m_Text: '''Space'' KEY'
 --- !u!222 &1628108589
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6861,7 +6860,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '''Space'''
+  m_Text: '''K'' Or ''Z'''
 --- !u!222 &1867137584
 CanvasRenderer:
   m_ObjectHideFlags: 0
