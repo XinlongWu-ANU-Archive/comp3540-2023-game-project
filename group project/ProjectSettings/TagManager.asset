@@ -23,6 +23,7 @@ TagManager:
   - Seed
   - Bullet
   - KillHint
+  - HPUp
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,6 @@ public class Level0PlayerController : PlayerController
     private float maxShowTime = 4.5f;
     private BulletManager bulletManager;
     public GameObject moveHint;
-    public GameObject monstersHint;
     public GameObject killHint;
 
     // Start is called before the first frame update
@@ -38,15 +37,6 @@ public class Level0PlayerController : PlayerController
         }
         else
             base.Update();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Monster"))
-        {
-            monstersHint.SetActive(true);
-        }
-        base.OnCollisionEnter2D(collision);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

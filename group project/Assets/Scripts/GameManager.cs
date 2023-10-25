@@ -45,22 +45,23 @@ public class GameManager : MonoBehaviour
     
 
     // update life hearts when the player loses one life
-    public void UpdateLife()
+    public bool UpdateLife(int value)
     {
-        life--;
-        if (life == 2)
+        if (value > 0 && life >= 3)
+            return false;
+        life += value;
+        for (int i = 0; i < 3; i++)
         {
-            hearts[2].SetActive(false);
-        }
-        if (life == 1)
-        {
-            hearts[1].SetActive(false);
+            if (life < i + 1)
+                hearts[i].SetActive(false);
+            else 
+                hearts[i].SetActive(true);
         }
         if (life == 0)
         {
-            hearts[0].SetActive(false);
             GameOver();
         }
+        return true;
     }
 
     public void ShowLife()

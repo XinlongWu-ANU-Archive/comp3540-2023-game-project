@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -85,7 +86,7 @@ public class PlayerController : MonoBehaviour
             //playerRb2D.bodyType = RigidbodyType2D.Kinematic;
             //collider2D.isTrigger = true;
             invincibilityTimer = 0;
-            gameManager.UpdateLife();
+            gameManager.UpdateLife(-1);
         }
     }
 
@@ -188,6 +189,11 @@ public class PlayerController : MonoBehaviour
          if (collision.CompareTag("EnterGate"))
         {
             LoadScene();
+        }
+        else if (collision.CompareTag("HPUp"))
+        {
+            if (gameManager.UpdateLife(1))
+                Destroy(collision.gameObject);
         }
     }
 
