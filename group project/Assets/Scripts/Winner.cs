@@ -15,7 +15,7 @@ public class Winner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        celebration.SetActive(false);
+       
         winPanel.SetActive(false);
         allMonstersDestroyed = false;
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -59,7 +59,7 @@ public class Winner : MonoBehaviour
 
     private void Win()
     {
-        celebration.SetActive(true);
+        
         celebration.GetComponent<Celebration>().PlayAllParticleSystems();
         winPanel.SetActive(true);
         scoreText.text = GameManager.score.ToString();
