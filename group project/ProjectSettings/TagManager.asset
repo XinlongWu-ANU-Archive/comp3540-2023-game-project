@@ -28,7 +28,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - firework
   - Water
   - UI
   - EnemyLayer
@@ -60,4 +60,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: firework
+    uniqueID: 1771896039
+    locked: 0
+  - name: UI
+    uniqueID: 2143013757
     locked: 0
